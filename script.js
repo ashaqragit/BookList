@@ -52,7 +52,7 @@ function bookIdGenerate() {
 
 //function to create a book object and append to book list array
 function addBookToArray() {
-  let newBook = new book(titleInput.value, authorName.value, didRead);
+  let newBook = new book(bookId, titleInput.value, authorName.value, didRead);
   //add the new book object to book listarray
   bookList.push(newBook);
   // console.log(bookList);
@@ -81,5 +81,5 @@ submitButton.addEventListener("click", (e) => {
   checkIfRead();
   //create new book object and add to array bookList
   addBookToArray();
-  bookIdGenerate();
+  // bookIdGenerate();
 });
