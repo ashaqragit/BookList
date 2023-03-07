@@ -31,22 +31,18 @@ function checkIfRead() {
 
 //function generate uniqe book id and check if the id exist if yes generate a new id
 function bookIdGenerate() {
-  let newBookId = `${Math.floor(Math.random() * 100)}-${Math.floor(
+  let newBookId = `${Math.floor(Math.random() * 100)}b${Math.floor(
     Math.random() * 100
   )}`;
-  console.log(newBookId);
-  bookIdList.push(newBookId);
-  console.log(bookIdList);
-  for (book of bookList) {
-    if (bookIdList.includes(newBookId) === false) {
-      bookId = newBookId;
-      console.log("new book id");
-      console.log(bookIdList);
-    } else if (bookIdList.includes(newBookId) === true) {
-      console.log("id already exist generating new one");
-      bookIdList.pop();
-      bookIdGenerate();
-    }
+  if (bookIdList.includes(newBookId) === false) {
+    bookId = newBookId;
+    bookIdList.push(newBookId);
+    console.log("new book id: " + newBookId);
+    console.log(bookIdList);
+  } else if (bookIdList.includes(newBookId) === true) {
+    console.log(newBookId + "id already exist generating new one");
+    bookIdList.pop();
+    bookIdGenerate();
   }
 }
 
@@ -55,31 +51,43 @@ function addBookToArray() {
   let newBook = new book(bookId, titleInput.value, authorName.value, didRead);
   //add the new book object to book listarray
   bookList.push(newBook);
-  // console.log(bookList);
 }
-//function loop thru booklist and generate HTML and add it to the DOM
+//function to generate HTML from the last object in booklist array and add it to the DOM
 function addBooksToDOM() {
-  for (book of bookList) {
-    bookCardsContainer.insertAdjacentHTML(
-      "beforeend",
-      `<div>
-        <h3>book name : ${book.name}</h3>
-        <h3>book author: ${book.author}</h3>
-        <h3>did you read the book? ${book.didRead}</h3>
-        <button>delete</button>
+  let lastArrayElement = bookList[bookList.length - 1];
+  bookCardsContainer.insertAdjacentHTML(
+    "beforeend",
+    `<div>
+        <p>book ID: ${lastArrayElement.bookId}</p>
+        <h3>book name : ${lastArrayElement.name}</h3>
+        <h3>book author: ${lastArrayElement.author}</h3>
+        <h3>did you read the book? ${lastArrayElement.didRead}</h3>
+        <button onclick="hey('${lastArrayElement.bookId}');">delete</button>
         <button>edit</button>
         <hr>
       </div>`
-    );
-  }
+  );
 }
+//onclick="removerow(this);
 //function to delete HTML element and remove the corresponding object in booklist array
 function deleteBook(bookId) {}
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-  //call the function to check if use read the book
+
+  bookIdGenerate();
   checkIfRead();
-  //create new book object and add to array bookList
   addBookToArray();
-  // bookIdGenerate();
+  addBooksToDOM();
+  console.log(bookList);
 });
+// function removerow(e) {
+//   e.parentNode.remove();
+// }
+function hey(id) {
+  console.log("hey");
+  console.log(typeof id);
+  console.log(id);
+  console.log(bookIdList.indexOf(id));
+  bookIdList.splice(bookIdList.indexOf(id), 1);
+  console.log(bookIdList);
+}
