@@ -6,6 +6,8 @@ const didReadYes = document.querySelector("#yes-read");
 const didReadNo = document.querySelector("#no-read");
 const bookCardsContainer = document.querySelector("#book-list");
 const bookForm = document.querySelector("#book-form-container");
+const yesBtn = document.querySelector("#yes-read");
+const noBtn = document.querySelector("#no-read");
 
 let didRead = "";
 let bookList = [];
@@ -60,11 +62,11 @@ function addBooksToDOM() {
     "beforeend",
     `<div>
         <p>book ID: ${lastArrayElement.bookId}</p>
-        <h3>book name : ${lastArrayElement.name}</h3>
-        <h3>book author: ${lastArrayElement.author}</h3>
-        <h3>did you read the book? ${lastArrayElement.didRead}</h3>
+        <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
+        <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
+        <h3 id="didYouRead${lastArrayElement.bookId}">did you read the book? ${lastArrayElement.didRead}</h3>
         <button onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
-        <button>edit</button>
+        <button onclick="editBook('${lastArrayElement.bookId}')">edit</button>
         <hr>
     </div>`
   );
@@ -84,7 +86,6 @@ function showBookForm() {
 }
 function hideBookForm() {
   bookForm.style.display = "none";
-  console.log("show form");
 }
 //function to delete HTML element
 function removeBookHTML(e) {
@@ -100,14 +101,23 @@ function removeBookFromArray(id) {
     console.log("this is dose not exist in array");
     console.log(bookIdList);
   }
-
   let index = bookList.findIndex((item) => item.bookId === id);
-
   if (index != -1) {
     bookList.splice(index, 1);
     console.log("removed book from book list array");
     console.log(bookList);
   } else {
     console.log("cant remove none existing book");
+  }
+}
+function editBook(id) {
+  showBookForm();
+  titleInput.textContent = id.name;
+  authorName.textContent = id.author;
+  titleInput.textContent = id.name;
+  if (id.didRead === "Yes") {
+    yesBtn.checked = true;
+  } else if (id.didRead === "No") {
+    noBtn.checked = true;
   }
 }
