@@ -62,7 +62,7 @@ function addBooksToDOM() {
         <h3>book name : ${lastArrayElement.name}</h3>
         <h3>book author: ${lastArrayElement.author}</h3>
         <h3>did you read the book? ${lastArrayElement.didRead}</h3>
-        <button onclick="hey('${lastArrayElement.bookId}');">delete</button>
+        <button onclick="hey('${lastArrayElement.bookId}'); removerow(this);">delete</button>
         <button>edit</button>
         <hr>
       </div>`
@@ -80,14 +80,16 @@ submitButton.addEventListener("click", (e) => {
   addBooksToDOM();
   console.log(bookList);
 });
-// function removerow(e) {
-//   e.parentNode.remove();
-// }
+function removerow(e) {
+  e.parentNode.remove();
+}
 function hey(id) {
-  console.log("hey");
-  console.log(typeof id);
-  console.log(id);
-  console.log(bookIdList.indexOf(id));
-  bookIdList.splice(bookIdList.indexOf(id), 1);
-  console.log(bookIdList);
+  if (bookIdList.indexOf(id) != -1) {
+    bookIdList.splice(bookIdList.indexOf(id), 1);
+    console.log("removed: " + id);
+    console.log(bookIdList);
+  } else {
+    console.log("this is dose not exist in array");
+    console.log(bookIdList);
+  }
 }
