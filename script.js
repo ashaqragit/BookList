@@ -63,32 +63,35 @@ function addBooksToDOM() {
         <h3>book name : ${lastArrayElement.name}</h3>
         <h3>book author: ${lastArrayElement.author}</h3>
         <h3>did you read the book? ${lastArrayElement.didRead}</h3>
-        <button onclick="hey('${lastArrayElement.bookId}'); removerow(this);">delete</button>
+        <button onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
         <button>edit</button>
         <hr>
     </div>`
   );
 }
 
-//function to delete HTML element and remove the corresponding object in booklist array
-function deleteBook(bookId) {}
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-
   bookIdGenerate();
   checkIfRead();
   addBookToArray();
   addBooksToDOM();
+  hideBookForm();
   console.log(bookList);
 });
 function showBookForm() {
   bookForm.style.display = "block";
+}
+function hideBookForm() {
+  bookForm.style.display = "none";
   console.log("show form");
 }
-function removerow(e) {
+//function to delete HTML element
+function removeBookHTML(e) {
   e.parentNode.remove();
 }
-function hey(id) {
+//function to delete the corresponding object in booklist array
+function removeBookFromArray(id) {
   if (bookIdList.indexOf(id) != -1) {
     bookIdList.splice(bookIdList.indexOf(id), 1);
     console.log("removed: " + id);
