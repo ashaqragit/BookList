@@ -9,8 +9,9 @@
     <title>BookList App</title>
   </head>
   <body>
-    <div class="">
-      <h1 class="">My BookList</h1>
+    <h1 class="">My BookList</h1>
+    <button onclick="showBookForm();">Add book</button>
+    <div id="book-form-container">
       <form action="" id="book-form">
         <div class="form-group">
           <label for="title">Title</label>
@@ -25,7 +26,7 @@
           <input id="yes-read" type="radio" name="didRead" value="yes" />Yes </br>
           <input id="no-read" type="radio" name="didRead" value="no" />No </br>
         </div>
-        <button id="submit-book-btn">Submit Book</button>
+        <button id="submit-book-btn" >Submit Book</button>
       </form>
     </div>
     <hr>

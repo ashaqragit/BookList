@@ -5,6 +5,7 @@ const submitButton = document.querySelector("#submit-book-btn");
 const didReadYes = document.querySelector("#yes-read");
 const didReadNo = document.querySelector("#no-read");
 const bookCardsContainer = document.querySelector("#book-list");
+const bookForm = document.querySelector("#book-form-container");
 
 let didRead = "";
 let bookList = [];
@@ -68,7 +69,7 @@ function addBooksToDOM() {
     </div>`
   );
 }
-//onclick="removerow(this);
+
 //function to delete HTML element and remove the corresponding object in booklist array
 function deleteBook(bookId) {}
 submitButton.addEventListener("click", (e) => {
@@ -80,6 +81,10 @@ submitButton.addEventListener("click", (e) => {
   addBooksToDOM();
   console.log(bookList);
 });
+function showBookForm() {
+  bookForm.style.display = "block";
+  console.log("show form");
+}
 function removerow(e) {
   e.parentNode.remove();
 }
