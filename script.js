@@ -65,7 +65,7 @@ function addBooksToDOM() {
         <button onclick="hey('${lastArrayElement.bookId}'); removerow(this);">delete</button>
         <button>edit</button>
         <hr>
-      </div>`
+    </div>`
   );
 }
 //onclick="removerow(this);
@@ -91,5 +91,15 @@ function hey(id) {
   } else {
     console.log("this is dose not exist in array");
     console.log(bookIdList);
+  }
+
+  let index = bookList.findIndex((item) => item.bookId === id);
+
+  if (index != -1) {
+    bookList.splice(index, 1);
+    console.log("removed book from book list array");
+    console.log(bookList);
+  } else {
+    console.log("cant remove none existing book");
   }
 }
