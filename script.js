@@ -2,6 +2,7 @@ const titleInput = document.querySelector("#title");
 const authorName = document.querySelector("#author");
 const isbnCode = document.querySelector("#isbn");
 const submitButton = document.querySelector("#submit-book-btn");
+const submitButtonEdit = document.querySelector("#submit-book-btn-edit");
 const didReadYes = document.querySelector("#yes-read");
 const didReadNo = document.querySelector("#no-read");
 const bookCardsContainer = document.querySelector("#book-list");
@@ -60,7 +61,7 @@ function addBooksToDOM() {
   let lastArrayElement = bookList[bookList.length - 1];
   bookCardsContainer.insertAdjacentHTML(
     "beforeend",
-    `<div>
+    `<div id="bookCard${lastArrayElement.bookId}">
         <p>book ID: ${lastArrayElement.bookId}</p>
         <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
         <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
@@ -71,6 +72,14 @@ function addBooksToDOM() {
     </div>`
   );
 }
+function viewEditForm() {}
+
+submitButtonEdit.addEventListener("click", (e) => {
+  e.preventDefault();
+  checkIfRead();
+  hideBookForm();
+  console.log(bookList);
+});
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();

@@ -1,3 +1,16 @@
-#book-form-container {
+.book-form-container {
   display: none;
+}
+.book-form-container-edit {
+  display: block;
+}
+.form-type-new,
+.form-type-edit {
+  background-color: chartreuse;
+}
+.submit-book-btn-edit {
+  display: block;
+}
+.submit-book-btn {
+  display: block;
 }
