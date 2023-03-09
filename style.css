@@ -4,8 +4,8 @@
 .book-form-container-edit {
   display: block;
 }
-.form-type-new,
-.form-type-edit {
+
+.edit {
   background-color: chartreuse;
 }
 .submit-book-btn-edit {

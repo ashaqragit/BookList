@@ -28,14 +28,32 @@
           <input id="no-read" type="radio" name="didRead" value="no" />No </br>
         </div>
         <button class="submit-book-btn" id="submit-book-btn" >Submit Book</button>
-
+      </form>
+    </div>
+    <div>
+      <h2>Book Edit</h2>
+      <form action="" id="edit-mode-form">
+        <div>
+          <label for="edit-title">Title edit</label>
+          <input type="text" id="edit-title" name="title-edit-value">
+        </div>
+        <div>
+          <label for="edit-author">Author edit</label>
+          <input type="text" id="edit-author" name="author-edit-value">
+        </div>
+        <div>
+          <h2>did you read</h2>
+          <input id="yes-read-edit" type="radio" name="didReadEdit" value="yes" />Yes </br>
+          <input id="no-read-edit" type="radio" name="didReadEdit" value="no" />No </br>
+        </div>
+        <button class="submit-book-btn" id="submit-book-btn" >Submit Book edit</button>
       </form>
     </div>
     <hr>
     <div id="book-list">
       <div>
         <h3>book name : the hobbit</h3>
-        <h3>book author: Tolkin</h3>
+        <h3>book author: Tolkien</h3>
         <h3>did you read the book? Yes</h3>
         <button>delete</button>
         <button>edit</button>
