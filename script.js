@@ -2,7 +2,7 @@ const titleInput = document.querySelector("#title");
 const authorName = document.querySelector("#author");
 const isbnCode = document.querySelector("#isbn");
 const submitButton = document.querySelector("#submit-book-btn");
-const submitButtonEdit = document.querySelector("#submit-book-btn-edit");
+
 const didReadYes = document.querySelector("#yes-read");
 const didReadNo = document.querySelector("#no-read");
 const bookCardsContainer = document.querySelector("#book-list");
@@ -73,13 +73,6 @@ function addBooksToDOM() {
   );
 }
 function viewEditForm() {}
-
-submitButtonEdit.addEventListener("click", (e) => {
-  e.preventDefault();
-  checkIfRead();
-  hideBookForm();
-  console.log(bookList);
-});
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
