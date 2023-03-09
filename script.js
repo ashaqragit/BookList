@@ -122,6 +122,24 @@ function returnCheckedTrueFalse() {
     yesBtnEdit.checked = false;
   }
 }
+function showEditForm(id) {
+  console.log("edited");
+  // let lastArrayElement = bookList[bookList.length - 1];
+  let bookCard = document.querySelector(`#bookCard${id}`);
+  bookCard.style.display = "none";
+}
+function hideEditForm(id) {
+  console.log("edited");
+  // let lastArrayElement = bookList[bookList.length - 1];
+  let editForm = document.querySelector(`#editForm${id}`);
+  let bookCard = document.querySelector(`#bookCard${id}`);
+  editForm.style.display = "none";
+  bookCard.style.display = "block";
+}
+function editBook(id) {
+  console.log("edit");
+  showEditForm(id);
+}
 
 function addBooksToDOM() {
   let lastArrayElement = bookList[bookList.length - 1];
@@ -137,7 +155,7 @@ function addBooksToDOM() {
 
         <button onclick="editBook('${lastArrayElement.bookId}')">edit</button>
     </div>
-    <div>
+    <div id="editForm${lastArrayElement.bookId}">
       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
       <form action="" id="edit-mode-form">
         <div>
@@ -153,9 +171,9 @@ function addBooksToDOM() {
           <input id="yes-read-edit${lastArrayElement.bookId}" type="radio" name="didReadEdit" value="yes" checked="" />Yes </br>
           <input id="no-read-edit" type="radio" name="didReadEdit" value="no" checked="" />No </br>
         </div>
-        <button class="submit-book-btn" id="submit-book-btn" >Submit Book edit</button>
-      </form>
-    </div>
+        <button onclick="hideEditForm(${lastArrayElement.bookId})">Submit Book edit</button>
+        </form>
+        </div>
     <button onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
     <hr>
     <hr>
