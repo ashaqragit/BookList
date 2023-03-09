@@ -1,5 +1,5 @@
 .book-form-container {
-  display: none;
+  display: block;
 }
 .book-form-container-edit {
   display: block;
