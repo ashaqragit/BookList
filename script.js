@@ -86,7 +86,6 @@ function removeBookFromArray(id) {
     console.log(bookIdList);
   } else {
     console.log("this is dose not exist in array");
-    s;
     console.log(bookIdList);
   }
   let index = bookList.findIndex((item) => item.bookId === id);
@@ -98,18 +97,8 @@ function removeBookFromArray(id) {
     console.log("cant remove none existing book");
   }
 }
-// function editBook(id) {
-//   showBookForm();
-//   titleInput.textContent = id.name;
-//   authorName.textContent = id.author;
-//   titleInput.textContent = id.name;
-//   if (id.didRead === "Yes") {
-//     yesBtn.checked = true;
-//   } else if (id.didRead === "No") {
-//     noBtn.checked = true;
-//   }
-// }
-// ALL EDIT FUNCTIONS ARE HERE=======================================================
+
+// ALL EDIT FUNCTIONS ARE HERE============================
 
 function updateYesNoEditForm() {
   let lastArrayElement = bookList[bookList.length - 1];
@@ -126,10 +115,13 @@ function updateYesNoEditForm() {
 function EditYesNoInArray(id) {
   let index = bookList.findIndex((item) => item.bookId === id);
   let yesBtnEdit = document.querySelector(`#yes-read-edit${id}`);
+  let didReadCard = document.querySelector(`#didYouRead${id}`);
   if (yesBtnEdit.checked) {
     bookList[index].didRead = "Yes";
+    didReadCard.textContent = `Did you read the book: Yes`;
   } else {
     bookList[index].didRead = "No";
+    didReadCard.textContent = `Did you read the book: No`;
   }
 }
 
@@ -146,9 +138,9 @@ function hideEditForm(id) {
   let newBookAuthor = document.querySelector(`#edit-author-${id}`).value;
   //========================= Book Card Selectors ========================
   let bookCard = document.querySelector(`#bookCard${id}`);
-  let newBookNameCard = document.querySelector(`#edit-title-${id}`).value;
-  let newBookAuthorCard = document.querySelector(`#edit-title-${id}`).value;
-  //=========== git the index of Edited Obj in book list Array by ID ===
+  let newBookNameCard = document.querySelector(`#bookName${id}`);
+  let newBookAuthorCard = document.querySelector(`#bookAuthor${id}`);
+  //=========== get the index of Edited Obj in book list Array by ID =====
   let index = bookList.findIndex((item) => item.bookId === id);
   //================== Display and hide Card and edit form ===============
   editForm.style.display = "none";
@@ -156,12 +148,16 @@ function hideEditForm(id) {
   //=========== Update the obj in book list array with new data ==========
   bookList[index].name = newBookName;
   bookList[index].author = newBookAuthor;
+  //=========== update the Card with new info from the book list array====
+  newBookNameCard.textContent = `book name : ${bookList[index].name}`;
+  newBookAuthorCard.textContent = `book author : ${bookList[index].author}`;
+
   EditYesNoInArray(id);
 
   console.log(bookList);
 }
+
 function editBook(id) {
-  console.log("edit");
   showEditForm(id);
 }
 
