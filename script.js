@@ -98,20 +98,20 @@ function removeBookFromArray(id) {
     console.log("cant remove none existing book");
   }
 }
-function editBook(id) {
-  showBookForm();
-  titleInput.textContent = id.name;
-  authorName.textContent = id.author;
-  titleInput.textContent = id.name;
-  if (id.didRead === "Yes") {
-    yesBtn.checked = true;
-  } else if (id.didRead === "No") {
-    noBtn.checked = true;
-  }
-}
+// function editBook(id) {
+//   showBookForm();
+//   titleInput.textContent = id.name;
+//   authorName.textContent = id.author;
+//   titleInput.textContent = id.name;
+//   if (id.didRead === "Yes") {
+//     yesBtn.checked = true;
+//   } else if (id.didRead === "No") {
+//     noBtn.checked = true;
+//   }
+// }
 // ALL EDIT FUNCTIONS ARE HERE=======================================================
 
-function returnCheckedTrueFalse() {
+function updateYesNoEditForm() {
   let lastArrayElement = bookList[bookList.length - 1];
   let yesBtnEdit = document.querySelector(
     `#yes-read-edit${lastArrayElement.bookId}`
@@ -122,6 +122,17 @@ function returnCheckedTrueFalse() {
     yesBtnEdit.checked = false;
   }
 }
+
+function EditYesNoInArray(id) {
+  let index = bookList.findIndex((item) => item.bookId === id);
+  let yesBtnEdit = document.querySelector(`#yes-read-edit${id}`);
+  if (yesBtnEdit.checked) {
+    bookList[index].didRead = "Yes";
+  } else {
+    bookList[index].didRead = "No";
+  }
+}
+
 function showEditForm(id) {
   let editForm = document.querySelector(`#editForm${id}`);
   let bookCard = document.querySelector(`#bookCard${id}`);
@@ -129,15 +140,25 @@ function showEditForm(id) {
   editForm.style.display = "block";
 }
 function hideEditForm(id) {
+  //========================= Edit Form Selectors ========================
   let editForm = document.querySelector(`#editForm${id}`);
-  let bookCard = document.querySelector(`#bookCard${id}`);
   let newBookName = document.querySelector(`#edit-title-${id}`).value;
+  let newBookAuthor = document.querySelector(`#edit-author-${id}`).value;
+  //========================= Book Card Selectors ========================
+  let bookCard = document.querySelector(`#bookCard${id}`);
+  let newBookNameCard = document.querySelector(`#edit-title-${id}`).value;
+  let newBookAuthorCard = document.querySelector(`#edit-title-${id}`).value;
+  //=========== git the index of Edited Obj in book list Array by ID ===
+  let index = bookList.findIndex((item) => item.bookId === id);
+  //================== Display and hide Card and edit form ===============
   editForm.style.display = "none";
   bookCard.style.display = "block";
-  let index = bookList.findIndex((item) => item.bookId === id);
+  //=========== Update the obj in book list array with new data ==========
   bookList[index].name = newBookName;
+  bookList[index].author = newBookAuthor;
+  EditYesNoInArray(id);
+
   console.log(bookList);
-  console.log("new book name " + newBookName);
 }
 function editBook(id) {
   console.log("edit");
@@ -158,7 +179,7 @@ function addBooksToDOM() {
 
         <button onclick="editBook('${lastArrayElement.bookId}')">edit</button>
     </div>
-    <div id="editForm${lastArrayElement.bookId}">
+    <div class="edit-form" id="editForm${lastArrayElement.bookId}">
       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
       <form action="" id="edit-mode-form">
         <div>
@@ -167,7 +188,7 @@ function addBooksToDOM() {
         </div>
         <div>
           <label for="edit-author">Author edit</label>
-          <input type="text" id="edit-author" name="author-edit-value" value="${lastArrayElement.author}">
+          <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
         </div>
         <div>
           <h2>did you read</h2>
@@ -184,5 +205,5 @@ function addBooksToDOM() {
     </div>
     `
   );
-  returnCheckedTrueFalse();
+  updateYesNoEditForm();
 }

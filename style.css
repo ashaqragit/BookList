@@ -14,3 +14,7 @@
 .submit-book-btn {
   display: block;
 }
+.edit-form {
+  display: none;
+  background-color: bisque;
+}
