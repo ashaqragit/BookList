@@ -8,6 +8,9 @@ const bookCardsContainer = document.querySelector("#book-list");
 const bookForm = document.querySelector("#book-form-container");
 const yesBtn = document.querySelector("#yes-read");
 const noBtn = document.querySelector("#no-read");
+const appTitle = document.querySelector("#app-title");
+const addBookButton = document.querySelector("#add-book-button");
+const bookListTitle = document.querySelector("#book-list-title");
 
 let didRead = "";
 let bookList = [];
@@ -70,9 +73,17 @@ submitButton.addEventListener("click", (e) => {
 });
 function showBookForm() {
   bookForm.style.display = "block";
+  appTitle.style.display = "none";
+  addBookButton.style.display = "none";
+  bookCardsContainer.style.display = "none";
+  bookListTitle.style.display = "none";
 }
 function hideBookForm() {
   bookForm.style.display = "none";
+  appTitle.style.display = "block";
+  addBookButton.style.display = "block";
+  bookListTitle.style.display = "block";
+  bookCardsContainer.style.display = "flex";
 }
 //function to delete HTML element
 function removeBookHTML(e) {
