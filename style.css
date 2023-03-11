@@ -19,6 +19,21 @@
 .submit-book-btn {
   display: block;
 }
+.app-header {
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.app-title {
+  padding-top: 20px;
+  margin: auto;
+}
+.add-book-button {
+  width: 100px;
+  height: 30px;
+  margin: auto;
+  margin-top: 20px;
+}
 .book-form-container {
   font-family: "Work Sans", sans-serif;
   display: flex;
@@ -29,6 +44,7 @@
   height: 400px;
   margin: auto;
   margin-top: 20vh;
+  border-radius: 5px;
 }
 .book-form-title {
   padding: 20px;

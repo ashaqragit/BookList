@@ -9,8 +9,16 @@
     <title>BookList App</title>
   </head>
   <body>
-    <h1 id="app-title">My BookList</h1>
-    <button id="add-book-button" onclick="showBookForm();">Add book</button>
+    <div class="app-header">
+      <img src="img/logo2.png" alt="" width="150" hight="150" />
+      <button
+        class="add-book-button"
+        id="add-book-button"
+        onclick="showBookForm();"
+      >
+        Add book
+      </button>
+    </div>
     <div class="book-form-container" id="book-form-container">
       <h2 class="book-form-title">ADD NEW BOOK</h2>
       <form action="" class="book-form" id="book-form">
@@ -31,9 +39,7 @@
         <button id="submit-book-btn">Submit Book</button>
       </form>
     </div>
-
-    <h2 id="book-list-title">BOOK LIST</h2>
-
+    <hr />
     <div id="book-list"></div>
     <script src="script.js"></script>
   </body>
