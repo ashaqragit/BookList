@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.book-form-container {
+  display: none;
+}
+.book-form-container-edit {
+  display: block;
+}
+
+.submit-book-btn-edit {
+  display: block;
+}
+.submit-book-btn {
+  display: block;
+}
+.book-form-title {
+  display: block;
+}
