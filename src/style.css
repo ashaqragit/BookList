@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .book-form-container {
   display: none;
 }
@@ -21,9 +25,9 @@
   align-items: center;
 }
 .myButton {
-  background-color: #44c767;
+  background-color: #2a7a3e;
   border-radius: 10px;
-  border: 1px solid #18ab29;
+  border: 1px solid #0c5515;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -32,25 +36,29 @@
   padding: 7px 16px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
+  margin-left: 10px;
 }
 .myButton:hover {
-  background-color: #5cbf2a;
+  background-color: #285213;
 }
 .myButton:active {
   position: relative;
   top: 1px;
 }
-/* =================== Book List ======================== */
-body {
-  --stripe: #25b9946b;
-  --bg: #ffffff6c;
-
-  background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
-    linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
-    linear-gradient(315deg, var(--bg) 25%, transparent 25%),
-    linear-gradient(45deg, var(--bg) 25%, transparent 25%);
-  background-size: 100px 100px;
-  background-color: var(--stripe);
+.search-bar {
+  margin-right: 10px;
+  height: 20px;
+  border-radius: 2px;
 }
+/* =================== Book List ======================== */
 .book-list {
+  height: 100vmax;
+}
+
+body {
+  background-image: url("img/twigs-4211837_960_720.jpg");
+}
+.blur {
+  opacity: 1;
+  backdrop-filter: blur(10, px);
 }
