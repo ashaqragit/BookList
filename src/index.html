@@ -27,26 +27,28 @@
       <input class="search-bar" type="text" placeholder="Search.." />
     </div>
     <div class="blur">
-      <div class="book-form-container" id="book-form-container">
-        <h2 class="book-form-title">ADD NEW BOOK</h2>
-        <form action="" class="book-form" id="book-form">
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="book-title-value" />
-          </div>
-          <div class="form-group">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="book-author-value" />
-          </div>
-          <div class="form-group-radio">
-            <h2>did you did read</h2>
-            <input id="yes-read" type="radio" name="didRead" value="yes" />Yes
-            <br />
-            <input id="no-read" type="radio" name="didRead" value="no" />No
-            <br />
-          </div>
-          <button id="submit-book-btn">Submit Book</button>
-        </form>
+      <div class="form-container">
+        <div class="book-form-container" id="book-form-container">
+          <h2 class="book-form-title">ADD NEW BOOK</h2>
+          <form action="" class="book-form" id="book-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" name="book-title-value" />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="book-author-value" />
+            </div>
+            <div class="form-group-radio">
+              <h2>did you did read</h2>
+              <input id="yes-read" type="radio" name="didRead" value="yes" />Yes
+              <br />
+              <input id="no-read" type="radio" name="didRead" value="no" />No
+              <br />
+            </div>
+            <button id="submit-book-btn">Submit Book</button>
+          </form>
+        </div>
       </div>
       <hr />
       <div class="book-list" id="book-list"></div>
