@@ -6,7 +6,7 @@
   display: none;
 }
 .book-form-container-edit {
-  display: block;
+  display: none;
 }
 
 .submit-book-btn-edit {
@@ -17,6 +17,9 @@
 }
 .book-form-title {
   display: block;
+}
+.edit-form {
+  display: none;
 }
 /* =============== Header Styles ================= */
 .app-header {
@@ -52,13 +55,12 @@
 }
 /* =================== Book List ======================== */
 .book-list {
-  height: 100vmax;
+  height: 100vh;
 }
 
 body {
-  background-image: url("img/twigs-4211837_960_720.jpg");
+  background-image: url("img/Artboard\ 1.png");
 }
 .blur {
-  opacity: 1;
-  backdrop-filter: blur(10, px);
+  backdrop-filter: blur(20px);
 }

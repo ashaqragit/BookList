@@ -72,15 +72,12 @@ submitButton.addEventListener("click", (e) => {
 });
 function showBookForm() {
   bookForm.style.display = "block";
-
   addBookButton.style.display = "none";
   bookCardsContainer.style.display = "none";
 }
 function hideBookForm() {
   bookForm.style.display = "none";
-
   addBookButton.style.display = "block";
-
   bookCardsContainer.style.display = "flex";
 }
 //function to delete HTML element
