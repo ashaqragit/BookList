@@ -58,30 +58,36 @@
 }
 /* =================== Book List ======================== */
 .book-list {
-  height: 100vh;
-  backdrop-filter: blur(20px);
+  width: 100vw;
+  display: flex;
   flex-wrap: wrap;
+  align-items: a;
 }
 body {
   background-image: url("img/Artboard\ 1.png");
+  display: flex;
+  flex-direction: column;
 }
 .blur {
   backdrop-filter: blur(20px);
+
+  flex-grow: 1;
+  min-height: 100vh;
 }
 /* =============== form container======================= */
 .form-container {
   height: 100vh;
-  backdrop-filter: blur(20px);
 }
 .book-form-container {
-  background-color: rgba(247, 219, 184, 0.233);
+  background-color: rgba(250, 234, 214, 0.233);
   color: aliceblue;
   width: 300px;
   height: 330px;
   border-radius: 10px;
-  margin: auto;
-  margin-top: 50px;
   font-family: "Open Sans", sans-serif;
+  border-top: 50px transparent;
+  margin: auto;
+  margin-top: 100px;
 }
 .form-group {
   display: flex;
@@ -90,10 +96,12 @@ body {
 }
 .book-form {
   margin: 20px;
+  opacity: 0.9;
 }
 .book-form-title {
   padding-top: 20px;
-  padding-left: 45px;
+  padding-left: 60px;
+  opacity: 0.9;
 }
 .form-group-radio {
   margin-top: 20px;
