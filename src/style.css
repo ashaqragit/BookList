@@ -62,7 +62,6 @@
   backdrop-filter: blur(20px);
   flex-wrap: wrap;
 }
-
 body {
   background-image: url("img/Artboard\ 1.png");
 }
@@ -104,6 +103,8 @@ body {
 }
 /* =========================== book cards ====================== */
 .book-Card {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(247, 219, 184, 0.233);
   color: aliceblue;
   width: 200px;
@@ -112,4 +113,10 @@ body {
   margin-left: 20px;
   margin-top: 50px;
   font-family: "Open Sans", sans-serif;
+}
+.book-card-hr {
+  width: 175px;
+  margin: auto;
+  margin-top: 20px;
+  opacity: 0.4;
 }
