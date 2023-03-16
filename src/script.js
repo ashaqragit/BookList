@@ -8,6 +8,7 @@ const bookCardsContainer = document.querySelector("#book-list");
 const bookForm = document.querySelector("#book-form-container");
 const yesBtn = document.querySelector("#yes-read");
 const noBtn = document.querySelector("#no-read");
+const bookFormContainer = document.querySelector("#form-container");
 
 const addBookButton = document.querySelector("#add-book-button");
 
@@ -71,12 +72,14 @@ submitButton.addEventListener("click", (e) => {
   console.log(bookList);
 });
 function showBookForm() {
+  bookFormContainer.style.display = "block";
   bookForm.style.display = "block";
   addBookButton.style.display = "none";
   bookCardsContainer.style.display = "none";
 }
 function hideBookForm() {
   bookForm.style.display = "none";
+  bookFormContainer.style.display = "none";
   addBookButton.style.display = "block";
   bookCardsContainer.style.display = "flex";
 }
@@ -172,7 +175,7 @@ function addBooksToDOM() {
   bookCardsContainer.insertAdjacentHTML(
     "beforeend",
     `
-    <div id="bookCardContainer${lastArrayElement.bookId}">
+    <div class="book-Card" id="bookCardContainer${lastArrayElement.bookId}">
     <div id="bookCard${lastArrayElement.bookId}">
         <p>book ID: ${lastArrayElement.bookId}</p>
         <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
@@ -201,9 +204,7 @@ function addBooksToDOM() {
         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
         </div>
     <button onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
-    <hr>
-    <hr>
-    <hr>
+
     </div>
     `
   );

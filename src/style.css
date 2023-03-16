@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
 }
-.book-form-container {
+.book-form-container,
+.form-container {
   display: none;
 }
 .book-form-container-edit {
@@ -27,6 +28,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(20px);
 }
 .myButton {
   background-color: #2a7a3e;
@@ -57,6 +59,8 @@
 /* =================== Book List ======================== */
 .book-list {
   height: 100vh;
+  backdrop-filter: blur(20px);
+  flex-wrap: wrap;
 }
 
 body {
@@ -68,6 +72,7 @@ body {
 /* =============== form container======================= */
 .form-container {
   height: 100vh;
+  backdrop-filter: blur(20px);
 }
 .book-form-container {
   background-color: rgba(247, 219, 184, 0.233);
@@ -96,4 +101,15 @@ body {
 }
 .submit-book-btn {
   margin-top: 20px;
+}
+/* =========================== book cards ====================== */
+.book-Card {
+  background-color: rgba(247, 219, 184, 0.233);
+  color: aliceblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 50px;
+  font-family: "Open Sans", sans-serif;
 }
