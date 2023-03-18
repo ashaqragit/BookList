@@ -120,6 +120,21 @@ body {
   margin-top: 20px;
 }
 /* =========================== book cards ====================== */
+.book-Card-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url("img/xx2.png");
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: aliceblue;
+  padding: 10px;
+}
 .book-Card {
   display: flex;
   flex-direction: column;
@@ -140,27 +155,30 @@ body {
   margin-top: 20px;
   opacity: 0.4;
 }
-.book-card-button {
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-  background-color: #ededed;
+.book-card-del {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
   border-radius: 6px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #d83526;
   display: inline-block;
   cursor: pointer;
-  color: #777777;
+  color: #ffffff;
   font-family: Arial;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 6px 24px;
+  padding: 7px 10px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #ffffff;
+  text-shadow: 0px 1px 0px #b23e35;
+  width: 35px;
+  margin-left: 165px;
+  opacity: 0.85;
 }
-.book-card-button:hover {
-  background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-  background-color: #dfdfdf;
+.book-card-del:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
 }
-.book-card-button:active {
+.book-card-del:active {
   position: relative;
   top: 1px;
 }

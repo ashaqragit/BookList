@@ -180,10 +180,10 @@ function addBooksToDOM() {
     id="bookCardContainer${lastArrayElement.bookId}"
   >
     <button
-      class="book-card-button"
+      class="book-card-del"
       onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
     >
-      delete
+      X
     </button>
     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
       <p>book ID: ${lastArrayElement.bookId}</p>
