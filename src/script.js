@@ -186,15 +186,20 @@ function addBooksToDOM() {
       X
     </button>
     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
-      <p>book ID: ${lastArrayElement.bookId}</p>
-      <hr class="book-card-hr" />
-      <h3 id="bookName${lastArrayElement.bookId}">
-        book name : ${lastArrayElement.name}
+      
+      <h3 >
+        book name : 
       </h3>
+      <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
+        ${lastArrayElement.name}
+      </p>
       <hr class="book-card-hr" />
-      <h3 id="bookAuthor${lastArrayElement.bookId}">
-        book author: ${lastArrayElement.author}
+      <h3>
+        book author: 
       </h3>
+      <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
+        ${lastArrayElement.author}
+      </p>
       <hr class="book-card-hr" />
       <h3 id="didYouRead${lastArrayElement.bookId}">
         did you read the book? ${lastArrayElement.didRead}

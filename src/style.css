@@ -93,12 +93,7 @@ body {
   background-size: cover;
   opacity: 1;
 }
-/* .book-form-bg {
-  background-image: url("img/yan-ots--4Q0Zx_po_0-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.5;
-} */
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -125,7 +120,7 @@ body {
   flex-direction: column;
   background-image: url("img/xx2.png");
   width: 200px;
-  height: 300px;
+  height: 350px;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 50px;
@@ -135,24 +130,12 @@ body {
   color: aliceblue;
   padding: 10px;
 }
-.book-Card {
-  display: flex;
-  flex-direction: column;
-  background-image: url("img/xx2.png");
-  color: aliceblue;
-  width: 200px;
-  height: 300px;
-  border-radius: 10px;
-  margin-left: 20px;
-  margin-top: 50px;
-  font-family: "Open Sans", sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 .book-card-hr {
-  width: 175px;
+  width: 200px;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 10px;
   opacity: 0.4;
 }
 .book-card-del {
@@ -181,4 +164,9 @@ body {
 .book-card-del:active {
   position: relative;
   top: 1px;
+}
+.info-paragraph-text {
+  margin-top: 5px;
+  inline-size: 200px;
+  overflow-wrap: break-word;
 }
