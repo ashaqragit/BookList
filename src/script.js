@@ -175,18 +175,38 @@ function addBooksToDOM() {
   bookCardsContainer.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="book-Card" id="bookCardContainer${lastArrayElement.bookId}">
-    <div id="bookCard${lastArrayElement.bookId}">
-        <p>book ID: ${lastArrayElement.bookId}</p>
-        <hr class="book-card-hr" />
-        <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
-        <hr class="book-card-hr"/>
-        <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
-        <hr class="book-card-hr"/>
-        <h3 id="didYouRead${lastArrayElement.bookId}">did you read the book? ${lastArrayElement.didRead}</h3>
-        <button class="book-card-button" onclick="editBook('${lastArrayElement.bookId}')">edit</button>
+      <div
+    class="book-Card-container"
+    id="bookCardContainer${lastArrayElement.bookId}"
+  >
+    <button
+      class="book-card-button"
+      onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+    >
+      delete
+    </button>
+    <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
+      <p>book ID: ${lastArrayElement.bookId}</p>
+      <hr class="book-card-hr" />
+      <h3 id="bookName${lastArrayElement.bookId}">
+        book name : ${lastArrayElement.name}
+      </h3>
+      <hr class="book-card-hr" />
+      <h3 id="bookAuthor${lastArrayElement.bookId}">
+        book author: ${lastArrayElement.author}
+      </h3>
+      <hr class="book-card-hr" />
+      <h3 id="didYouRead${lastArrayElement.bookId}">
+        did you read the book? ${lastArrayElement.didRead}
+      </h3>
+      <button
+        class="book-card-button"
+        onclick="editBook('${lastArrayElement.bookId}')"
+      >
+        edit
+      </button>
     </div>
-    <div class="edit-form" id="editForm${lastArrayElement.bookId}">
+     <div class="edit-form" id="editForm${lastArrayElement.bookId}">
       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
       <form action="" id="edit-mode-form">
         <div>
@@ -205,8 +225,7 @@ function addBooksToDOM() {
         </form>
         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
         </div>
-    <button class="book-card-button" onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
-    </div>
+  </div>
     `
   );
   updateYesNoEditForm();
@@ -214,6 +233,7 @@ function addBooksToDOM() {
 
 {
   /* <div class="book-Card" id="bookCardContainer${lastArrayElement.bookId}">
+    <button class="book-card-button" onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
     <div id="bookCard${lastArrayElement.bookId}">
         <p>book ID: ${lastArrayElement.bookId}</p>
         <hr class="book-card-hr" />
@@ -222,7 +242,6 @@ function addBooksToDOM() {
         <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
         <hr class="book-card-hr"/>
         <h3 id="didYouRead${lastArrayElement.bookId}">did you read the book? ${lastArrayElement.didRead}</h3>
-
         <button class="book-card-button" onclick="editBook('${lastArrayElement.bookId}')">edit</button>
     </div>
     <div class="edit-form" id="editForm${lastArrayElement.bookId}">
@@ -244,7 +263,6 @@ function addBooksToDOM() {
         </form>
         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
         </div>
-    <button class="book-card-button" onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
 
     </div> */
 }

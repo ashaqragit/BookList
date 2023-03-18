@@ -64,31 +64,41 @@
   align-items: a;
 }
 body {
-  background-image: url("img/Artboard\ 1.png");
+  background-image: url("img/x4.jpg");
   display: flex;
   flex-direction: column;
 }
 .blur {
-  backdrop-filter: blur(20px);
-
+  backdrop-filter: blur(5px);
   flex-grow: 1;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 /* =============== form container======================= */
 .form-container {
   height: 100vh;
 }
 .book-form-container {
-  background-color: rgba(250, 234, 214, 0.233);
+  /* background-color: rgba(250, 234, 214, 0.233); */
+  background-image: url("img/xx2.png");
   color: aliceblue;
   width: 300px;
   height: 330px;
   border-radius: 10px;
   font-family: "Open Sans", sans-serif;
-  border-top: 50px transparent;
   margin: auto;
   margin-top: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
 }
+/* .book-form-bg {
+  background-image: url("img/yan-ots--4Q0Zx_po_0-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+} */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -113,14 +123,16 @@ body {
 .book-Card {
   display: flex;
   flex-direction: column;
-  background-color: rgba(247, 219, 184, 0.233);
+  background-image: url("img/xx2.png");
   color: aliceblue;
   width: 200px;
-  height: 250px;
+  height: 300px;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 50px;
   font-family: "Open Sans", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .book-card-hr {
   width: 175px;

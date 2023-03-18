@@ -30,27 +30,34 @@
 
       <div id="form-container" class="form-container">
         <div class="book-form-container" id="book-form-container">
-          <h2 class="book-form-title">ADD NEW BOOK</h2>
-          <form action="" class="book-form" id="book-form">
-            <div class="form-group">
-              <label for="title">Title</label>
-              <input type="text" id="title" name="book-title-value" />
-            </div>
-            <div class="form-group">
-              <label for="author">Author</label>
-              <input type="text" id="author" name="book-author-value" />
-            </div>
-            <div class="form-group-radio">
-              <h2>did you did read</h2>
-              <input id="yes-read" type="radio" name="didRead" value="yes" />Yes
-              <br />
-              <input id="no-read" type="radio" name="didRead" value="no" />No
-              <br />
-            </div>
-            <button class="submit-book-btn" id="submit-book-btn">
-              Submit Book
-            </button>
-          </form>
+          <div class="book-form-bg">
+            <h2 class="book-form-title">ADD NEW BOOK</h2>
+            <form action="" class="book-form" id="book-form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="book-title-value" />
+              </div>
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="book-author-value" />
+              </div>
+              <div class="form-group-radio">
+                <h2>did you did read</h2>
+                <input
+                  id="yes-read"
+                  type="radio"
+                  name="didRead"
+                  value="yes"
+                />Yes
+                <br />
+                <input id="no-read" type="radio" name="didRead" value="no" />No
+                <br />
+              </div>
+              <button class="submit-book-btn" id="submit-book-btn">
+                Submit Book
+              </button>
+            </form>
+          </div>
         </div>
       </div>
       <hr />
@@ -58,103 +65,56 @@
     </div>
   </body>
   <script src="script.js"></script>
-</html>
 
-<!-- ================================================= -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="style.css" />
-    <title>BookList App</title>
-  </head>
-  <body>
-    <div class="app-header blur">
-      <button
-        class="myButton add-book-button"
-        id="add-book-button"
-        onclick="showBookForm();"
-      >
-        Add book
-      </button>
-      <img
-        class="logo-img"
-        src="img/logo2.png"
-        alt=""
-        width="150"
-        hight="150"
-      />
-      <input class="search-bar" type="text" placeholder="Search.." />
-    </div>
-    <div class="blur">
-      <div id="form-container" class="form-container">
-        <div class="book-form-container" id="book-form-container">
-          <h2 class="book-form-title">ADD NEW BOOK</h2>
-          <form action="" class="book-form" id="book-form">
-            <div class="form-group">
-              <label for="title">Title</label>
-              <input type="text" id="title" name="book-title-value" />
-            </div>
-            <div class="form-group">
-              <label for="author">Author</label>
-              <input type="text" id="author" name="book-author-value" />
-            </div>
-            <div class="form-group-radio">
-              <h2>did you did read</h2>
-              <input id="yes-read" type="radio" name="didRead" value="yes" />Yes
-              <br />
-              <input id="no-read" type="radio" name="didRead" value="no" />No
-              <br />
-            </div>
-            <button class="submit-book-btn" id="submit-book-btn">
-              Submit Book
-            </button>
-          </form>
-        </div>
-      </div>
-      <hr />
-      <div class="book-list" id="book-list"></div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
-</html> -->
-
-<div class="book-Card" id="bookCardContainer${lastArrayElement.bookId}">
-  <div id="bookCard${lastArrayElement.bookId}">
+  <div
+    class="book-Card-container"
+    id="bookCardContainer${lastArrayElement.bookId}"
+  >
+    <button
+      class="book-card-button"
+      onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+    >
+      delete
+    </button>
+    <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
       <p>book ID: ${lastArrayElement.bookId}</p>
       <hr class="book-card-hr" />
-      <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
-      <hr class="book-card-hr"/>
-      <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
-      <hr class="book-card-hr"/>
-      <h3 id="didYouRead${lastArrayElement.bookId}">did you read the book? ${lastArrayElement.didRead}</h3>
-      <div id="book-card-buttons-container" class="book-card-buttons-container">
-        <button class="book-card-button" onclick="editBook('${lastArrayElement.bookId}')">edit</button>
-        <button class="book-card-button" onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
-      </div>     
+      <h3 id="bookName${lastArrayElement.bookId}">
+        book name : ${lastArrayElement.name}
+      </h3>
+      <hr class="book-card-hr" />
+      <h3 id="bookAuthor${lastArrayElement.bookId}">
+        book author: ${lastArrayElement.author}
+      </h3>
+      <hr class="book-card-hr" />
+      <h3 id="didYouRead${lastArrayElement.bookId}">
+        did you read the book? ${lastArrayElement.didRead}
+      </h3>
+      <button
+        class="book-card-button"
+        onclick="editBook('${lastArrayElement.bookId}')"
+      >
+        edit
+      </button>
+    </div>
+     <div class="edit-form" id="editForm${lastArrayElement.bookId}">
+      <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
+      <form action="" id="edit-mode-form">
+        <div>
+          <label for="edit-title">Title edit</label>
+          <input type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
+        </div>
+        <div>
+          <label for="edit-author">Author edit</label>
+          <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
+        </div>
+        <div>
+          <h2>did you read</h2>
+          <input id="yes-read-edit${lastArrayElement.bookId}" type="radio" name="didReadEdit" value="yes" checked="" />Yes </br>
+          <input id="no-read-edit" type="radio" name="didReadEdit" value="no" checked="" />No </br>
+        </div>
+        </form>
+        <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
+        </div>
   </div>
-  <div class="edit-form" id="editForm${lastArrayElement.bookId}">
-    <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
-    <form action="" id="edit-mode-form">
-      <div>
-        <label for="edit-title">Title edit</label>
-        <input type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
-      </div>
-      <div>
-        <label for="edit-author">Author edit</label>
-        <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
-      </div>
-      <div>
-        <h2>did you read</h2>
-        <input id="yes-read-edit${lastArrayElement.bookId}" type="radio" name="didReadEdit" value="yes" checked="" />Yes </br>
-        <input id="no-read-edit" type="radio" name="didReadEdit" value="no" checked="" />No </br>
-      </div>
-      </form>
-      <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
-      </div>
-  </div>
+</html>
