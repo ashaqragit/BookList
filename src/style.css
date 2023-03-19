@@ -130,6 +130,9 @@ body {
   color: aliceblue;
   padding: 10px;
 }
+.top-button-container {
+  display: flex;
+}
 .book-card-info {
   /* flex-grow: 1; */
   display: flex;
@@ -153,13 +156,12 @@ body {
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
-  padding: 7px 10px;
+  padding-top: 3px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #b23e35;
   width: 35px;
-  margin-left: 165px;
   opacity: 0.85;
 }
 .book-card-del:hover {
@@ -181,28 +183,22 @@ body {
 }
 
 .book-card-edit {
-  margin-top: 55px;
-  box-shadow: inset 0px 1px 0px 0px #caefab;
-  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
-  background-color: #77d42a;
+  margin-top: 25px;
+  box-shadow: inset 0px 1px 0px 0px #abc6ef;
+  background: linear-gradient(to bottom, #227ac2 5%, #5399e9 100%);
   border-radius: 6px;
-  border: 1px solid #268a16;
+  border: 1px solid #101969;
   display: inline-block;
   cursor: pointer;
-  color: #306108;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 7px 10px;
+  font-size: 24px;
+  padding-top: 5px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #aade7c;
-  width: 50px;
   opacity: 0.85;
   color: #ffffff;
 }
 .book-card-edit:hover {
-  background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
-  background-color: #5cb811;
+  background: linear-gradient(to bottom, #5399e9 5%, #227ac2 100%);
 }
 .book-card-edit:active {
   position: relative;

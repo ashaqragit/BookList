@@ -20,8 +20,8 @@ let bookId = "";
 class book {
   constructor(bookId, name, author, didRead) {
     this.bookId = bookId;
-    this.name = name;
-    this.author = author;
+    this.name = name || "Please define book title";
+    this.author = author || "Please define the book Author";
     this.didRead = didRead;
   }
 }
@@ -31,6 +31,8 @@ function checkIfRead() {
   if (didReadYes.checked) {
     didRead = "Yes";
   } else if (didReadNo.checked) {
+    didRead = "No";
+  } else {
     didRead = "No";
   }
 }
@@ -85,7 +87,9 @@ function hideBookForm() {
 }
 //function to delete HTML element
 function removeBookHTML(e) {
-  e.parentNode.remove();
+  console.log(e);
+  // e.parentNode.remove();
+  e.parentNode.parentNode.parentNode.remove();
 }
 //function to delete the corresponding object in book list array
 function removeBookFromArray(id) {
@@ -183,14 +187,23 @@ function addBooksToDOM() {
     class="book-Card-container"
     id="bookCardContainer${lastArrayElement.bookId}"
   >
+
+    <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
+    <div class="top-button-container">
+    <button
+        class="book-card-edit"
+        id="book-card-edit${lastArrayElement.bookId}"
+        onclick="editBook('${lastArrayElement.bookId}')"
+      >
+        <ion-icon name="pencil"></ion-icon>
+      </button>
     <button
       class="book-card-del"
       onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
     >
-      X
+      <ion-icon name="close"></ion-icon>
     </button>
-    <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
-
+    </div>
       <h3 >
         book name :
       </h3>
@@ -208,13 +221,7 @@ function addBooksToDOM() {
       <h3 id="didYouRead${lastArrayElement.bookId}">
         did you read the book? ${lastArrayElement.didRead}
       </h3>
-      <button
-        class="book-card-edit"
-        id="book-card-edit${lastArrayElement.bookId}"
-        onclick="editBook('${lastArrayElement.bookId}')"
-      >
-        Edit
-      </button>
+
     </div>
      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
