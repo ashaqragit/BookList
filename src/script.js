@@ -139,9 +139,11 @@ function showEditForm(id) {
   let bookCard = document.querySelector(`#bookCard${id}`);
   bookCard.style.display = "none";
   editForm.style.display = "block";
+  // bookEditButton.style.display = "none";
 }
 function hideEditForm(id) {
   //========================= Edit Form Selectors ========================
+  let editBtn = document.querySelector(`#book-card-edit${id}`);
   let editForm = document.querySelector(`#editForm${id}`);
   let newBookName = document.querySelector(`#edit-title-${id}`).value;
   let newBookAuthor = document.querySelector(`#edit-author-${id}`).value;
@@ -158,8 +160,10 @@ function hideEditForm(id) {
   bookList[index].name = newBookName;
   bookList[index].author = newBookAuthor;
   //=========== update the Card with new info from the book list array====
-  newBookNameCard.textContent = `book name : ${bookList[index].name}`;
-  newBookAuthorCard.textContent = `book author : ${bookList[index].author}`;
+  newBookNameCard.textContent = `${bookList[index].name}`;
+  newBookAuthorCard.textContent = `${bookList[index].author}`;
+
+  // editBtn.style.marginTop = "auto";
 
   EditYesNoInArray(id);
 
@@ -186,18 +190,18 @@ function addBooksToDOM() {
       X
     </button>
     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
-      
+
       <h3 >
-        book name : 
+        book name :
       </h3>
       <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
         ${lastArrayElement.name}
       </p>
       <hr class="book-card-hr" />
       <h3>
-        book author: 
+        book author:
       </h3>
-      <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
+      <p class="info-paragraph-text" id="bookAuthor${lastArrayElement.bookId}">
         ${lastArrayElement.author}
       </p>
       <hr class="book-card-hr" />
@@ -205,10 +209,11 @@ function addBooksToDOM() {
         did you read the book? ${lastArrayElement.didRead}
       </h3>
       <button
-        class="book-card-button"
+        class="book-card-edit"
+        id="book-card-edit${lastArrayElement.bookId}"
         onclick="editBook('${lastArrayElement.bookId}')"
       >
-        edit
+        Edit
       </button>
     </div>
      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
