@@ -87,8 +87,6 @@ function hideBookForm() {
 }
 //function to delete HTML element
 function removeBookHTML(e) {
-  console.log(e);
-  // e.parentNode.remove();
   e.parentNode.parentNode.parentNode.remove();
 }
 //function to delete the corresponding object in book list array
@@ -131,10 +129,10 @@ function EditYesNoInArray(id) {
   let didReadCard = document.querySelector(`#didYouRead${id}`);
   if (yesBtnEdit.checked) {
     bookList[index].didRead = "Yes";
-    didReadCard.textContent = `Did you read the book: Yes`;
+    didReadCard.textContent = `Yes`;
   } else {
     bookList[index].didRead = "No";
-    didReadCard.textContent = `Did you read the book: No`;
+    didReadCard.textContent = `No`;
   }
 }
 
@@ -204,7 +202,7 @@ function addBooksToDOM() {
       <ion-icon name="close"></ion-icon>
     </button>
     </div>
-      <h3 >
+      <h3 class="book-name-container" >
         book name :
       </h3>
       <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
@@ -218,9 +216,11 @@ function addBooksToDOM() {
         ${lastArrayElement.author}
       </p>
       <hr class="book-card-hr" />
-      <h3 id="didYouRead${lastArrayElement.bookId}">
-        did you read the book? ${lastArrayElement.didRead}
-      </h3>
+      <h3>Did you read the book?</h3>
+      <p id="didYouRead${lastArrayElement.bookId}">
+         ${lastArrayElement.didRead}
+      </p>
+
 
     </div>
      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
