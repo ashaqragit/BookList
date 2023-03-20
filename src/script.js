@@ -228,7 +228,7 @@ function addBooksToDOM() {
       </p>
       <hr class="book-card-hr" />
       <h3>Did you read the book?</h3>
-      <p id="didYouRead${lastArrayElement.bookId}">
+      <p class="info-paragraph-text" id="didYouRead${lastArrayElement.bookId}">
          ${lastArrayElement.didRead}
       </p>
     </div>

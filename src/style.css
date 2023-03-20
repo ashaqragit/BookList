@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,11 @@
 }
 .are-you-sure {
   display: none;
+}
+h3 {
+  font-size: 17px;
+  text-shadow: -1px -1px 0 #0000007e, 1px -1px 0 #0000007e, -1px 1px 0 #0000007e,
+    1px 1px 0 #0000007e;
 }
 /* =============== Header Styles ================= */
 .app-header {
@@ -78,23 +83,34 @@ body {
   margin: 0;
   padding: 0;
 }
+.info-paragraph-text {
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+}
 /* =============== form container======================= */
 .form-container {
   height: 100vh;
 }
+label {
+  font-size: 20px;
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+}
 .book-form-container {
-  /* background-color: rgba(250, 234, 214, 0.233); */
   background-image: url("img/xx2.png");
   color: aliceblue;
   width: 300px;
-  height: 330px;
+  height: 400px;
   border-radius: 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "PT Sans Caption", sans-serif;
   margin: auto;
   margin-top: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
+  box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
+  -webkit-box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
+  -moz-box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
 }
 
 .form-group {
@@ -106,6 +122,16 @@ body {
   margin: 20px;
   opacity: 0.9;
 }
+.user-input {
+  width: 100%;
+  padding: 7px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "PT Sans Caption", sans-serif;
+}
 .book-form-title {
   padding-top: 20px;
   padding-left: 60px;
@@ -115,10 +141,68 @@ body {
   margin-top: 20px;
 }
 .submit-book-btn {
-  margin-top: 20px;
 }
+.bottom-form-buttons-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.submit-book-btn {
+  font-family: "PT Sans Caption", sans-serif;
+  box-shadow: inset 0px 1px 0px 0px #9acc85;
+  background: linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+  border-radius: 3px;
+  background-color: #74ad5a;
+  border: 1px solid #3b6e22;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 6px 12px;
+  text-decoration: none;
+  width: 92.5px;
+  margin-left: 30px;
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+}
+.submit-book-btn:hover {
+  background: linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+  background-color: #68a54b;
+}
+.submit-book-btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.cancel-submit-book-btn {
+  font-family: "PT Sans Caption", sans-serif;
+  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  background-color: #d0451b;
+  border-radius: 3px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 6px 24px;
+  text-shadow: 0px 1px 0px #854629;
+  margin-left: 20px;
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+}
+.cancel-submit-book-btn:hover {
+  background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color: #bc3315;
+}
+.cancel-submit-book-btn:active {
+  position: relative;
+  top: 1px;
+}
+
 /* =========================== book cards ====================== */
 .book-Card-container {
+  border: 1px solid #d6ccca;
   display: flex;
   flex-direction: column;
   background-image: url("img/xx2.png");
@@ -127,11 +211,14 @@ body {
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "PT Sans Caption", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
   color: aliceblue;
   padding: 10px;
+  box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
+  -webkit-box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
+  -moz-box-shadow: 1px 2px 18px -1px rgba(0, 0, 0, 0.35) inset;
 }
 .top-button-container {
   display: flex;
