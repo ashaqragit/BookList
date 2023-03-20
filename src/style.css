@@ -23,6 +23,9 @@
 .edit-form {
   display: none;
 }
+.are-you-sure {
+  display: none;
+}
 /* =============== Header Styles ================= */
 .app-header {
   display: flex;

@@ -73,6 +73,18 @@ submitButton.addEventListener("click", (e) => {
   hideBookForm();
   console.log(bookList);
 });
+function showDelWindow(id) {
+  let deleteContainer = document.querySelector(`#are-you-sure${id}`);
+  let bookCard = document.querySelector(`#bookCard${id}`);
+  bookCard.style.display = "none";
+  deleteContainer.style.display = "flex";
+}
+function hideDelWindow(id) {
+  let deleteContainer = document.querySelector(`#are-you-sure${id}`);
+  let bookCard = document.querySelector(`#bookCard${id}`);
+  bookCard.style.display = "flex";
+  deleteContainer.style.display = "none";
+}
 function showBookForm() {
   bookFormContainer.style.display = "block";
   bookForm.style.display = "block";
@@ -87,7 +99,7 @@ function hideBookForm() {
 }
 //function to delete HTML element
 function removeBookHTML(e) {
-  e.parentNode.parentNode.parentNode.remove();
+  e.parentNode.parentNode.remove();
 }
 //function to delete the corresponding object in book list array
 function removeBookFromArray(id) {
@@ -185,7 +197,6 @@ function addBooksToDOM() {
     class="book-Card-container"
     id="bookCardContainer${lastArrayElement.bookId}"
   >
-
     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
     <div class="top-button-container">
     <button
@@ -197,20 +208,20 @@ function addBooksToDOM() {
       </button>
     <button
       class="book-card-del"
-      onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+      onclick="showDelWindow('${lastArrayElement.bookId}');"
     >
       <ion-icon name="close"></ion-icon>
     </button>
     </div>
       <h3 class="book-name-container" >
-        book name :
+        Book Title :
       </h3>
       <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
         ${lastArrayElement.name}
       </p>
       <hr class="book-card-hr" />
       <h3>
-        book author:
+        Book Author:
       </h3>
       <p class="info-paragraph-text" id="bookAuthor${lastArrayElement.bookId}">
         ${lastArrayElement.author}
@@ -220,8 +231,6 @@ function addBooksToDOM() {
       <p id="didYouRead${lastArrayElement.bookId}">
          ${lastArrayElement.didRead}
       </p>
-
-
     </div>
      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
@@ -242,44 +251,93 @@ function addBooksToDOM() {
         </form>
         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
         </div>
+        <div class="are-you-sure" id="are-you-sure${lastArrayElement.bookId}">
+        <h3> Are you sure to delete</h3>
+        <button
+         class="book-card-del"
+        onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+        >
+         Yes
+         </button>
+         <button
+         class="book-card-del"
+        onclick="hideDelWindow('${lastArrayElement.bookId}');"
+        >
+         No
+         </button>
+        </div>
   </div>
     `
   );
   updateYesNoEditForm();
 }
+//  <div
+//     class="book-Card-container"
+//     id="bookCardContainer${lastArrayElement.bookId}"
+//   >
 
-{
-  /* <div class="book-Card" id="bookCardContainer${lastArrayElement.bookId}">
-    <button class="book-card-button" onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);">delete</button>
-    <div id="bookCard${lastArrayElement.bookId}">
-        <p>book ID: ${lastArrayElement.bookId}</p>
-        <hr class="book-card-hr" />
-        <h3 id="bookName${lastArrayElement.bookId}">book name : ${lastArrayElement.name}</h3>
-        <hr class="book-card-hr"/>
-        <h3 id="bookAuthor${lastArrayElement.bookId}">book author: ${lastArrayElement.author}</h3>
-        <hr class="book-card-hr"/>
-        <h3 id="didYouRead${lastArrayElement.bookId}">did you read the book? ${lastArrayElement.didRead}</h3>
-        <button class="book-card-button" onclick="editBook('${lastArrayElement.bookId}')">edit</button>
-    </div>
-    <div class="edit-form" id="editForm${lastArrayElement.bookId}">
-      <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
-      <form action="" id="edit-mode-form">
-        <div>
-          <label for="edit-title">Title edit</label>
-          <input type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
-        </div>
-        <div>
-          <label for="edit-author">Author edit</label>
-          <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
-        </div>
-        <div>
-          <h2>did you read</h2>
-          <input id="yes-read-edit${lastArrayElement.bookId}" type="radio" name="didReadEdit" value="yes" checked="" />Yes </br>
-          <input id="no-read-edit" type="radio" name="didReadEdit" value="no" checked="" />No </br>
-        </div>
-        </form>
-        <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
-        </div>
+//     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
+//     <div class="top-button-container">
+//     <button
+//         class="book-card-edit"
+//         id="book-card-edit${lastArrayElement.bookId}"
+//         onclick="editBook('${lastArrayElement.bookId}')"
+//       >
+//         <ion-icon name="pencil"></ion-icon>
+//       </button>
+//     <button
+//       class="book-card-del"
+//       onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+//     >
+//       <ion-icon name="close"></ion-icon>
+//     </button>
+//     </div>
+//       <h3 class="book-name-container" >
+//         Book Title :
+//       </h3>
+//       <p class="info-paragraph-text" id="bookName${lastArrayElement.bookId}">
+//         ${lastArrayElement.name}
+//       </p>
+//       <hr class="book-card-hr" />
+//       <h3>
+//         Book Author:
+//       </h3>
+//       <p class="info-paragraph-text" id="bookAuthor${lastArrayElement.bookId}">
+//         ${lastArrayElement.author}
+//       </p>
+//       <hr class="book-card-hr" />
+//       <h3>Did you read the book?</h3>
+//       <p id="didYouRead${lastArrayElement.bookId}">
+//          ${lastArrayElement.didRead}
+//       </p>
 
-    </div> */
-}
+//     </div>
+//      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
+//       <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
+//       <form action="" id="edit-mode-form">
+//         <div>
+//           <label for="edit-title">Title edit</label>
+//           <input type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
+//         </div>
+//         <div>
+//           <label for="edit-author">Author edit</label>
+//           <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
+//         </div>
+//         <div>
+//           <h2>did you read</h2>
+//           <input id="yes-read-edit${lastArrayElement.bookId}" type="radio" name="didReadEdit" value="yes" checked="" />Yes </br>
+//           <input id="no-read-edit" type="radio" name="didReadEdit" value="no" checked="" />No </br>
+//         </div>
+//         </form>
+//         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
+//         </div>
+//         <div class="are-you-sure" id="are-you-sure">
+//         <h3> Are you sure to delete</h3>
+//         <button
+//          class="book-card-del"
+//         onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
+//         >
+//          <ion-icon name="close"></ion-icon>
+//          </button>
+//         </div>
+//   </div>
