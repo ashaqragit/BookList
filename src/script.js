@@ -99,7 +99,7 @@ function hideBookForm() {
 }
 //function to delete HTML element
 function removeBookHTML(e) {
-  e.parentNode.parentNode.remove();
+  e.parentNode.parentNode.parentNode.remove();
 }
 //function to delete the corresponding object in book list array
 function removeBookFromArray(id) {
@@ -252,20 +252,23 @@ function addBooksToDOM() {
         <button onclick="hideEditForm('${lastArrayElement.bookId}')">Submit Book edit</button>
         </div>
         <div class="are-you-sure" id="are-you-sure${lastArrayElement.bookId}">
-        <h3> Are you sure to delete</h3>
-        <button
-         class="book-card-del"
+        <h3 class="sure-message"> Are you sure to delete</h3>
+        <div class="del-buttons-container">
+         <button
+         class="book-card-del yes-button"
         onclick="removeBookFromArray('${lastArrayElement.bookId}'); removeBookHTML(this);"
         >
          Yes
          </button>
          <button
-         class="book-card-del"
+         class="book-card-del no-button"
         onclick="hideDelWindow('${lastArrayElement.bookId}');"
         >
          No
          </button>
         </div>
+        </div>
+
   </div>
     `
   );
