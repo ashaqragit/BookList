@@ -9,6 +9,7 @@ const bookForm = document.querySelector("#book-form-container");
 const yesBtn = document.querySelector("#yes-read");
 const noBtn = document.querySelector("#no-read");
 const bookFormContainer = document.querySelector("#form-container");
+const cancelInput = document.querySelector("#cancel-submit-book-btn");
 
 const addBookButton = document.querySelector("#add-book-button");
 
@@ -73,6 +74,9 @@ submitButton.addEventListener("click", (e) => {
   hideBookForm();
   console.log(bookList);
 });
+cancelInput.addEventListener("click", (e) => {
+  e.preventDefault();
+});
 function showDelWindow(id) {
   let deleteContainer = document.querySelector(`#are-you-sure${id}`);
   let bookCard = document.querySelector(`#bookCard${id}`);
@@ -96,7 +100,15 @@ function hideBookForm() {
   bookFormContainer.style.display = "none";
   addBookButton.style.display = "block";
   bookCardsContainer.style.display = "flex";
+  clearForm();
 }
+function clearForm() {
+  titleInput.value = "";
+  authorName.value = "";
+  yesBtn.checked = false;
+  noBtn.checked = false;
+}
+
 //function to delete HTML element
 function removeBookHTML(e) {
   e.parentNode.parentNode.parentNode.remove();
@@ -233,15 +245,15 @@ function addBooksToDOM() {
       </p>
     </div>
      <div class="edit-form" id="editForm${lastArrayElement.bookId}">
-      <h2 class="edit">Book Edit ${lastArrayElement.bookId}</h2>
+      <h2 class="edit">Edit Book</h2>
       <form action="" id="edit-mode-form">
         <div>
           <label for="edit-title">Title edit</label>
-          <input type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
+          <input class="user-input" type="text" id="edit-title-${lastArrayElement.bookId}" name="title-edit-value" value="${lastArrayElement.name}">
         </div>
         <div>
           <label for="edit-author">Author edit</label>
-          <input type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
+          <input class="user-input" type="text" id="edit-author-${lastArrayElement.bookId}" name="author-edit-value" value="${lastArrayElement.author}">
         </div>
         <div>
           <h2>did you read</h2>
