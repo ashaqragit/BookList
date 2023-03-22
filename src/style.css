@@ -116,9 +116,10 @@ h3 {
   align-items: a;
 }
 body {
-  background-image: url("img/x4.jpg");
+  background-image: url("img/x5.png");
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .blur {
   backdrop-filter: blur(5px);
