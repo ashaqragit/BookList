@@ -12,11 +12,11 @@
     <div class="blur">
       <div class="app-header">
         <button
-          class="myButton add-book-button"
+          class="add-book-button"
           id="add-book-button"
           onclick="showBookForm();"
         >
-          Add book
+          +
         </button>
         <img
           class="logo-img"
@@ -25,9 +25,15 @@
           width="150"
           hight="150"
         />
-        <input class="search-bar" type="text" placeholder="Search.." />
+        <div class="search-container">
+          <button class="search-btn">Search</button>
+          <input
+            class="search-bar user-input-search"
+            type="text"
+            placeholder="Search.."
+          />
+        </div>
       </div>
-
       <div id="form-container" class="form-container">
         <div class="book-form-container" id="book-form-container">
           <div class="book-form-bg">
@@ -81,7 +87,6 @@
           </div>
         </div>
       </div>
-      <hr />
       <div class="book-list" id="book-list"></div>
     </div>
   </body>

@@ -32,38 +32,82 @@ h3 {
     1px 1px 0 #0000007e;
 }
 /* =============== Header Styles ================= */
+.add-book-button {
+  font-family: "PT Sans Caption", sans-serif;
+  box-shadow: inset 0px 1px 0px 0px #9acc85;
+  background: linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+  border-radius: 3px;
+  background-color: #74ad5a;
+  border: 1px solid #3b6e22;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+  width: 45px;
+  margin-left: 15px;
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+}
+.add-book-button:hover {
+  background: linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+  background-color: #68a54b;
+}
+.add-book-button:active {
+  position: relative;
+  top: 1px;
+}
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(20px);
 }
-.myButton {
-  background-color: #2a7a3e;
-  border-radius: 10px;
-  border: 1px solid #0c5515;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 18px;
-  padding: 7px 16px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
-  margin-left: 10px;
-}
-.myButton:hover {
-  background-color: #285213;
-}
-.myButton:active {
-  position: relative;
-  top: 1px;
-}
 .search-bar {
   margin-right: 10px;
   height: 20px;
   border-radius: 2px;
 }
+.user-input-search {
+  padding: 15px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 0px 6px 6px 0px;
+  box-sizing: border-box;
+  font-family: "PT Sans Caption", sans-serif;
+  margin-right: 15px;
+  opacity: 0.9;
+}
+.search-btn {
+  box-shadow: inset 0px 1px 0px 0px #9acc85;
+  background: linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+  background-color: #74ad5a;
+  border: 1px solid #3b6e22;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 12px;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 6px 0px 0px 6px;
+}
+.search-btn:hover {
+  background: linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+  background-color: #68a54b;
+}
+.search-btn:active {
+  position: relative;
+  top: 1px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
 /* =================== Book List ======================== */
 .book-list {
   width: 100vw;
