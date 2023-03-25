@@ -232,14 +232,14 @@ function addBooksToDOM() {
     <div class="book-card-info" id="bookCard${lastArrayElement.bookId}">
       <div class="top-button-container">
         <button
-          class="book-card-edit"
+          class="book-card-edit "
           id="book-card-edit${lastArrayElement.bookId}"
           onclick="editBook('${lastArrayElement.bookId}')"
         >
           <ion-icon name="pencil"></ion-icon>
         </button>
         <button
-          class="book-card-del"
+          class="book-card-del "
           onclick="showDelWindow('${lastArrayElement.bookId}');"
         >
           <ion-icon name="close"></ion-icon>

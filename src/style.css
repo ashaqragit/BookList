@@ -237,8 +237,13 @@ label {
 }
 /* ================================ edit Form ================== */
 .edit-book-title {
-  margin-left: 45px;
+  margin-left: 55px;
   margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-shadow: -1px -1px 0 #00000036, 1px -1px 0 #00000036, -1px 1px 0 #00000036,
+    1px 1px 0 #00000036;
+  opacity: 0.95;
 }
 .edit-form-buttons-container {
   margin-top: 15px;
@@ -312,7 +317,7 @@ label {
 
 /* =========================== book cards ====================== */
 .book-Card-container {
-  border: 1px solid #d6ccca;
+  border: 1px solid #00000067;
   display: flex;
   flex-direction: column;
   background-image: url("../src/img/card.png");
@@ -325,7 +330,9 @@ label {
   background-repeat: no-repeat;
   background-size: cover;
   color: rgb(0, 0, 0);
-  padding: 10px;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
   box-shadow: 1px 5px 3px 0px rgba(0, 0, 0, 0.35);
 }
 .top-button-container {
@@ -333,7 +340,7 @@ label {
   justify-content: flex-end;
 }
 .book-name-container {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .book-card-info {
   display: flex;
@@ -348,33 +355,20 @@ label {
   opacity: 0.4;
 }
 .book-card-del {
-  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
-  background-color: #fc8d83;
-  border-radius: 6px;
-  border: 1px solid #d83526;
+  background: none;
+  border: none;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 3px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #b23e35;
-  width: 35px;
-  height: 35px;
-  opacity: 0.85;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
   margin-left: 10px;
+  margin-top: 4px;
+  opacity: 0.95;
 }
-.book-card-del:hover {
-  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
-  background-color: #e4685d;
-}
-.book-card-del:active {
-  position: relative;
-  top: 1px;
-}
+
 .info-paragraph-text {
   margin-top: 5px;
   inline-size: 200px;
@@ -383,28 +377,20 @@ label {
 }
 
 .book-card-edit {
-  box-shadow: inset 0px 1px 0px 0px #abc6ef;
-  background: linear-gradient(to bottom, #227ac2 5%, #5399e9 100%);
-  border-radius: 6px;
-  border: 1px solid #101969;
+  background: none;
+  border: none;
   display: inline-block;
   cursor: pointer;
-  font-size: 24px;
-  padding-top: 5px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #aade7c;
-  opacity: 0.85;
   color: #ffffff;
-  width: 35px;
-  height: 35px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  margin-left: 10px;
+  margin-top: 4px;
+  opacity: 0.95;
 }
-.book-card-edit:hover {
-  background: linear-gradient(to bottom, #5399e9 5%, #227ac2 100%);
-}
-.book-card-edit:active {
-  position: relative;
-  top: 1px;
-}
+
 /* ===================================== Delete Window ======================== */
 
 .are-you-sure {
@@ -467,3 +453,45 @@ label {
   position: relative;
   top: 1px;
 }
+/* =========================test================================ */
+
+.buttons {
+  size: 20px;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: #ffffff;
+}
+
+/* .book-card-del {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 3px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+  width: 35px;
+  height: 35px;
+  opacity: 0.85;
+  margin-left: 10px;
+}
+.book-card-del:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+.book-card-del:active {
+  position: relative;
+  top: 1px;
+} */
